@@ -9,14 +9,16 @@ public class NumberGuessingGameThreadedServer {
 
         ServerSocket serverSocket = new ServerSocket(5555);
         final int MAX_PLAYERS = 4;
-
+        int currentPlayers = 0;
         while (true) {
-            System.out.println("Waiting for connection");
-            Socket connectionSocket = serverSocket.accept();
-            System.out.println("Connection accepted");
-
-            NumberGuessingGameRequestHandler handler = new NumberGuessingGameRequestHandler(connectionSocket);
-            new Thread(handler).start();
+            if(currentPlayers < MAX_PLAYERS) {
+                System.out.println("Waiting for connection");
+                Socket connectionSocket = serverSocket.accept();
+                System.out.println("Connection accepted");
+                NumberGuessingGameRequestHandler handler = new NumberGuessingGameRequestHandler(connectionSocket);
+                new Thread(handler).start();
+                currentPlayers++;
+            }
         }
     }
 }
