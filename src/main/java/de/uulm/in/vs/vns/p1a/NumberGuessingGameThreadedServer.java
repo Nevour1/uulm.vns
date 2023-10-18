@@ -8,7 +8,7 @@ public class NumberGuessingGameThreadedServer {
     public static void main(String[] args) throws IOException {
 
         ServerSocket serverSocket = new ServerSocket(5555);
-        final int MAX_PLAYERS = 4;
+        final int MAX_PLAYERS = 3;
         int currentPlayers = 0;
         while (true) {
             if(currentPlayers < MAX_PLAYERS) {
