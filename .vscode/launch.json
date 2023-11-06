@@ -1,0 +1,31 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "NumberGuessingGameThreadedServer",
+            "request": "launch",
+            
+            "mainClass": "de.uulm.in.vs.vns.p1a.NumberGuessingGameThreadedServer",
+            "projectName": "p1a"
+        },
+        {
+            "type": "java",
+            "name": "URLFetcher",
+            "request": "launch",
+            "args": [
+                "http://www.example.com"],
+            "mainClass": "de.uulm.in.vs.vns.p2a.URLFetcher",
+            "projectName": "p1a"
+        }
+    ]
+}
