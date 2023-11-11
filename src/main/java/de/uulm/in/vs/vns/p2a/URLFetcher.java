@@ -18,7 +18,7 @@ public class URLFetcher {
         try {
             URL url = new URL(urlStr);
             String host = url.getHost();
-            int port = url.getPort() != -1 ? url.getPort() : 80;
+            int port =  80;
             String path = url.getPath().isEmpty() ? "/" : url.getPath();
 
             Socket socket = new Socket(host, port);
