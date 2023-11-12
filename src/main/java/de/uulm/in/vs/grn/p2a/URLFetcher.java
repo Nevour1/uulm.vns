@@ -48,15 +48,15 @@ public class URLFetcher {
             String[] pathSegments = path.split("/");
             String lastPathSegment = pathSegments[pathSegments.length -1];
             String line;
-            int linesread = firstLine.length()+2;
+            int bytesRead = firstLine.length()+2;
             
             do {
                 line = reader.readLine();
-                linesread += line.length()+2;
+                bytesRead += line.length()+2;
             } while (!line.isEmpty());
-            System.out.println(linesread);
+            System.out.println(bytesRead);
             inputStream.reset();
-            inputStream.skip(linesread);
+            inputStream.skip(bytesRead);
                        
             
             if (statusCode == 200) {
@@ -68,9 +68,9 @@ public class URLFetcher {
 
                     // Binärinhalt als Bytestrom lesen
                     byte[] buffer = new byte[2^17];
-                    int bytesRead;
-                    while ((bytesRead = inputStream.read(buffer)) != -1) {
-                        fileOutputStream.write(buffer, 0, bytesRead);
+                    int bytesReadout;
+                    while ((bytesReadout = inputStream.read(buffer)) != -1) {
+                        fileOutputStream.write(buffer, 0, bytesReadout);
                     }
                 
 
