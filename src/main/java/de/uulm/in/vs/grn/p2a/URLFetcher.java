@@ -11,7 +11,6 @@ public class URLFetcher {
             System.out.println("Bitte geben Sie die URL als Argument an.");
             return;
         }
-        // pdf test url http://www.pdf995.com/samples/pdf.pdf
 
         String urlStr = args[0];
 
