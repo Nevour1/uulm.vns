@@ -27,7 +27,12 @@ public class URLFetcher {
                     "Connection: close\r\n" +
                     // "Transfer-Encoding: identity\r\n" +
                     "\r\n";
-
+            /*a1: verpflichtende Header-Felder:
+                    -Methodenaufruf
+                    -Pfad/ HTTP version
+                    -host
+                    hier noch zusätzlich Connection Close
+            */
             OutputStream outputStream = socket.getOutputStream();
             InputStream inputStream = new BufferedInputStream(socket.getInputStream());
             outputStream.write(request.getBytes());
