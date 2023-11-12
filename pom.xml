@@ -3,7 +3,7 @@
 
     <properties>
         <!-- An jeweilige Aufgabe anpassen -->
-        <grn.group>20</grn.group>
+        <grn.group>10</grn.group>
         <grn.task>p2</grn.task>
         <java.main>de.uulm.in.vs.grn.p2a.URLFetcher</java.main>
 
