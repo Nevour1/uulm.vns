@@ -28,3 +28,16 @@ hs_err_pid*
 replay_pid*
 
 # End of https://www.toptal.com/developers/gitignore/api/java
+/.idea/compiler.xml
+/.idea/encodings.xml
+/.idea/jarRepositories.xml
+/.vscode/launch.json
+/.idea/misc.xml
+/.idea/dictionaries/Mumian_Haas.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.vscode/settings.json
+/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch
+/test.png
+/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml
+/.idea/vcs.xml
+/.idea/workspace.xml
