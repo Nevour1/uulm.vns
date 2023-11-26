@@ -11,7 +11,8 @@ public class Sockagram {
     public static void main(String[] args) throws IOException {
         if (args.length != 2){
             System.out.println("Bitte Filepath von PNG/JPEG und filter angeben");
-            // System.exit(1); // für später fals gui
+             System.exit(1);
+
         }
         String path = args[0];
 
@@ -40,27 +41,34 @@ public class Sockagram {
         fileInputStream.close();
 
         int readin;
-        byte[] data = new byte[5];
+        byte[] data = new byte[2048];
         byte[] firstfive = readFirstNBytes(inputStream, 5);
-
-        while ((readin = inputStream.read(data, 0, data.length)) != -1){
+        int status = firstfive[0];
+        int packageLength = ByteBuffer.wrap(firstfive).getInt(1);
+        int totalReadin = 0;
+        while (totalReadin < packageLength){
+            readin = inputStream.read(data, 0, Math.min(data.length, packageLength - totalReadin));
             responseBuffer.write(data,0,readin);
+            totalReadin += readin;
         }
         responseBuffer.flush();
+        if (inputStream.read() != -1){
+            System.out.println("Package Length did not Match Header Field, Package was Cut off");
+        }
+        //int check = inputStream.read();
 
         byte[] response = responseBuffer.toByteArray();
-        int status = firstfive[0];
+
+
+
 
 
         fileOutputStream.write(response);
         fileOutputStream.close();
+        System.out.println("Image Saved with " + packageLength + " Bytes as test.png");
         socket.close();
-
-
-
-
-
     }
+
 
     public static byte[] readFirstNBytes(InputStream inputStream, int n) throws IOException {
         byte[] buffer = new byte[n];
