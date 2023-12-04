@@ -54,7 +54,7 @@ public class KeyValueHandler implements Runnable {
                             if (inputs_a.length != 3) {
                                 writer.write("ERR: Unknown Command!\n");
                             } else {
-                                writer.write("RES: OK");
+                                writer.write("RES: OK\n");
                                 map.put(inputs_a[1], inputs_a[2]);
 
                             }
