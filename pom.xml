@@ -4,8 +4,8 @@
     <properties>
         <!-- An jeweilige Aufgabe anpassen -->
         <grn.group>10</grn.group>
-        <grn.task>p3</grn.task>
-        <java.main>de.uulm.in.vs.grn.p3a.Sockagram</java.main>
+        <grn.task>p4</grn.task>
+        <java.main>de.uulm.in.vs.grn.p4a.keyValueServer</java.main>
 
         <!-- Unveraendert lassen! -->
         <java.version>1.8</java.version>
