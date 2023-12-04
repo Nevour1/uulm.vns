@@ -28,6 +28,14 @@ hs_err_pid*
 replay_pid*
 
 # End of https://www.toptal.com/developers/gitignore/api/java
+/.idea/shelf/Uncommitted_changes_before_Update_at_11_27_23,_12_25_PM_[Changes]/shelved.patch
+/.idea/shelf/Uncommitted_changes_before_Update_at_11_27_23,_12_29_PM_[Changes]/shelved.patch
+/.idea/shelf/Uncommitted_changes_before_Update_at_11_27_23,_12_33_PM_[Changes]/shelved.patch
+/.idea/shelf/implemented_basic_image_client.xml
+/.idea/shelf/implemented_basic_image_client/shelved.patch
+/.idea/shelf/Uncommitted_changes_before_Update_at_11_27_23,_12_25_PM_[Changes]/shelved.patch
+/.idea/shelf/Uncommitted_changes_before_Update_at_11_27_23,_12_29_PM_[Changes]/shelved.patch
+/.idea/shelf/Uncommitted_changes_before_Update_at_11_27_23,_12_33_PM_[Changes]/shelved.patch
 /.idea/compiler.xml
 /.idea/encodings.xml
 /.idea/jarRepositories.xml
