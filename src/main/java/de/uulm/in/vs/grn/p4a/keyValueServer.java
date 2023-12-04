@@ -30,7 +30,7 @@ public class keyValueServer {
             } catch (IOException e){
                 throw new RuntimeException(e);
             }
-
+            outer:
             while(input != null){
 
                 try {
@@ -46,15 +46,32 @@ public class keyValueServer {
                             if (map.containsKey(inputs_a[1])) {
                                 writer.write("RES: " + map.get(inputs_a[1]));
                                 writer.newLine();
+                                break;
                             }
                             else {
-                                writer.write("RES: Unknown Key!\n");
+                                writer.write("ERR: Unknown Key!\n");
+                                break;
                             }
+                        case "PUT":
+                            if (inputs_a.length != 3){
+                                writer.write("ERR: Unknown Command!\n");
+                            }
+                            else {
+                                map.put(inputs_a[1], inputs_a[2]);
 
+                            }
+                            break;
+                        case "EXIT":
+                            writer.write("RES: BYE!\n");
+                            break outer;
+                        default:
+                            writer.write("ERR: Unknown Command!\n");
                     }
+
 
                 } finally {
                     writer.flush();
+
                 }
                 try {
                     input = reader.readLine();
@@ -63,6 +80,8 @@ public class keyValueServer {
                 }
 
             }
+
+            connectionsSocket.close();
 
 
         }
