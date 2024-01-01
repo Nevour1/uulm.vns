@@ -22,14 +22,16 @@ public class Pixelflut {
     private Color color;
     private DatagramSocket socket;
     private InetAddress address;
+    private int port;
     public Pixelflut(String host, int port) throws IOException {
         image = new BufferedImage(128, 128, BufferedImage.TYPE_INT_RGB);
         color = new Color((int)(Math.random() * 255), (int)(Math.random() * 255), (int)(Math.random() * 255));
 
         // todo set up udp socket
 
-        socket = new DatagramSocket(9999);
+        socket = new DatagramSocket();
 
+        this.port = port;
         address = InetAddress.getByName(host);
 
         // todo receive update packets
@@ -103,7 +105,7 @@ public class Pixelflut {
 
         try{
         byte[] data = {x,y,(byte) color.getRed(), (byte) color.getGreen(), (byte)color.getBlue()};
-        DatagramPacket update = new DatagramPacket(data, data.length,address,9999);
+        DatagramPacket update = new DatagramPacket(data, data.length,address,port);
         socket.send(update);
         }catch (IOException e){
             e.printStackTrace();
