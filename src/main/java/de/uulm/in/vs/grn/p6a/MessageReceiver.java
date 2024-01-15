@@ -8,13 +8,15 @@ import java.net.Socket;
 
 public class MessageReceiver implements Runnable {
     BufferedReader in;
+    Chatclient chatClient;
 
-    public MessageReceiver(Socket socket) throws IOException {
+    public MessageReceiver(Socket socket, Chatclient chatClient) throws IOException {
         this.in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        this.chatClient = chatClient;
     }
     @Override
     public void run(){
-        while(true){
+        while(chatClient.loggedIn){
             try{
                 System.out.println(in.readLine());
             } catch (IOException e){
